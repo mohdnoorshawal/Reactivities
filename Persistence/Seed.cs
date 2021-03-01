@@ -11,95 +11,95 @@ namespace Persistence
         public static async Task SeedData(DataContext context)
         {
             if (context.Activities.Any()) return;
-            
-            var activities = new List<activity>
+
+            var activities = new List<Activity>
             {
-                new activity
+                new Activity
                 {
-                    Title = "Past activity 1",
+                    Title = "Past Activity 1",
                     Date = DateTime.Now.AddMonths(-2),
-                    Description = "activity 2 months ago",
+                    Description = "Activity 2 months ago",
                     Category = "drinks",
                     City = "London",
                     Venue = "Pub",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Past activity 2",
+                    Title = "Past Activity 2",
                     Date = DateTime.Now.AddMonths(-1),
-                    Description = "activity 1 month ago",
+                    Description = "Activity 1 month ago",
                     Category = "culture",
                     City = "Paris",
                     Venue = "Louvre",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 1",
+                    Title = "Future Activity 1",
                     Date = DateTime.Now.AddMonths(1),
-                    Description = "activity 1 month in future",
+                    Description = "Activity 1 month in future",
                     Category = "culture",
                     City = "London",
                     Venue = "Natural History Museum",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 2",
+                    Title = "Future Activity 2",
                     Date = DateTime.Now.AddMonths(2),
-                    Description = "activity 2 months in future",
+                    Description = "Activity 2 months in future",
                     Category = "music",
                     City = "London",
                     Venue = "O2 Arena",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 3",
+                    Title = "Future Activity 3",
                     Date = DateTime.Now.AddMonths(3),
-                    Description = "activity 3 months in future",
+                    Description = "Activity 3 months in future",
                     Category = "drinks",
                     City = "London",
                     Venue = "Another pub",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 4",
+                    Title = "Future Activity 4",
                     Date = DateTime.Now.AddMonths(4),
-                    Description = "activity 4 months in future",
+                    Description = "Activity 4 months in future",
                     Category = "drinks",
                     City = "London",
                     Venue = "Yet another pub",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 5",
+                    Title = "Future Activity 5",
                     Date = DateTime.Now.AddMonths(5),
-                    Description = "activity 5 months in future",
+                    Description = "Activity 5 months in future",
                     Category = "drinks",
                     City = "London",
                     Venue = "Just another pub",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 6",
+                    Title = "Future Activity 6",
                     Date = DateTime.Now.AddMonths(6),
-                    Description = "activity 6 months in future",
+                    Description = "Activity 6 months in future",
                     Category = "music",
                     City = "London",
                     Venue = "Roundhouse Camden",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 7",
+                    Title = "Future Activity 7",
                     Date = DateTime.Now.AddMonths(7),
-                    Description = "activity 2 months ago",
+                    Description = "Activity 2 months ago",
                     Category = "travel",
                     City = "London",
                     Venue = "Somewhere on the Thames",
                 },
-                new activity
+                new Activity
                 {
-                    Title = "Future activity 8",
+                    Title = "Future Activity 8",
                     Date = DateTime.Now.AddMonths(8),
-                    Description = "activity 8 months in future",
+                    Description = "Activity 8 months in future",
                     Category = "film",
                     City = "London",
                     Venue = "Cinema",

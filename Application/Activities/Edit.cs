@@ -1,10 +1,9 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
-using Domain;
 using MediatR;
+using Domain;
 using Persistence;
+using AutoMapper;
 
 namespace Application.Activities
 {
@@ -12,14 +11,13 @@ namespace Application.Activities
     {
         public class Command : IRequest
         {
-            public activity Activity { get; set; }
-
+            public Activity Activity { get; set; }
         }
+
         public class Handler : IRequestHandler<Command>
         {
             private readonly DataContext _context;
             private readonly IMapper _mapper;
-
             public Handler(DataContext context, IMapper mapper)
             {
                 _context = context;
@@ -30,7 +28,7 @@ namespace Application.Activities
             {
                 var activity = await _context.Activities.FindAsync(request.Activity.Id);
 
-                _mapper.Map(request.Activity,activity);
+                _mapper.Map(request.Activity, activity);
 
                 await _context.SaveChangesAsync();
 
