@@ -1,35 +1,42 @@
-import React, { useEffect } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { observer } from "mobx-react-lite";
+import React, { useEffect } from "react";
+import { Grid } from "semantic-ui-react";
+import { useStore } from "../../../app/api/stores/store";
+import LoadingComponent from "../../../app/layout/LoadingComponent";
 
-import ActivityList from './ActivityList';
-import { observer } from 'mobx-react-lite';
-import LoadingComponent from '../../../app/layout/LoadingComponent';
-import { useStore } from '../../../app/api/stores/store';
+import ActivityFilters from "./ActivityFilters";
+import ActivityList from "./ActivityList";
 
-export default observer(function ActivityDashboard() {
-  const { activityStore } = useStore();
-  const { loadActivities, activityRegistery } = activityStore;
+
+function ActivityDashboard() {
+
+  const {activityStore} = useStore();
+  const {loadActivities, activityRegistry} = activityStore;
+
   useEffect(() => {
-    if (activityRegistery.size <= 1) loadActivities();
-  }, [activityRegistery.size, loadActivities]);
+    if(activityRegistry.size <= 1)
+    {
+      activityStore.loadActivities();
+    }    
+  }, [activityRegistry.size, loadActivities]);
 
-  if (activityStore.loadingInitial)
-    return <LoadingComponent content="Loading App" />;
+
+  if (activityStore.loadingInitial) return <LoadingComponent content="Loading app"  />
 
   return (
+    /* semantic ui grid systeam has 16 unlike bootstraps 12 */
     <Grid>
       <Grid.Column width="10">
         <ActivityList />
-        {/* 
-        <List style={{ marginTop: '7em' }}>
-          {activities.map((activity) => (
-            <List.Item key={activity.id}>{activity.title}</List.Item>
-          ))}
-        </List> */}
       </Grid.Column>
       <Grid.Column width="6">
-        <h2>Activity Filters</h2>
+         <ActivityFilters />
       </Grid.Column>
     </Grid>
   );
-});
+}
+
+export default observer(ActivityDashboard);
+
+// && in here means everything to the right of this && will execute only if what's on the left is true
+// so activity details will only load if activities[0] exists/ is true
