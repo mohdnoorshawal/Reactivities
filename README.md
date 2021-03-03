@@ -48,4 +48,10 @@ npm install @types/react-calendar
 
 npm install -S react-calendar
 
+**================= React Tostify**
+
+npm install react-toastify
+
+npm install @types/react-toastify
+
 **================= Next Command (for future)**
