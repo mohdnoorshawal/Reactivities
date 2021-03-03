@@ -1,17 +1,20 @@
-import { createContext, useContext } from 'react';
-
+import { useContext } from 'react';
+import { createContext } from 'react';
 import ActivityStore from './activityStore';
-interface Store {
+import CommonStore from './commonStore';
 
-    activityStore: ActivityStore
+interface Store {
+  activityStore: ActivityStore;
+  commonStore: CommonStore;
 }
 
 export const store: Store = {
-    activityStore: new ActivityStore()
-}
+  activityStore: new ActivityStore(),
+  commonStore: new CommonStore(),
+};
 
 export const StoreContext = createContext(store);
 
 export function useStore() {
-    return useContext(StoreContext);
-} 
+  return useContext(StoreContext);
+}
