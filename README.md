@@ -39,3 +39,11 @@ npm install mobx mobx-react-lite
 npm install -S react-router-dom
 
 npm i @types/react-router-dom --save-dev
+
+================= React Calendar
+
+npm install react-calendar
+
+npm install @types/react-calendar
+
+================= Next Command (for future)
