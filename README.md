@@ -54,4 +54,16 @@ npm install react-toastify
 
 npm install @types/react-toastify
 
-**================= Next Command (for future)**
+**================= Yup**
+
+npm install yup
+
+npm install @types/yup --sava-dev
+
+**================= DatePicker**
+
+npm install react-datepicker
+
+npm install @types/react-datepicker --save-dev
+
+npm i date-fns@2.17.0
