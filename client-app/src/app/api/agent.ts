@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { Activity } from './../models/activity';
 import { history } from './../../index';
-import { store } from './stores/store';
+import { store } from '../stores/store';
 
 
 
