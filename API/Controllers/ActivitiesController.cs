@@ -2,13 +2,14 @@ using System;
 using System.Threading.Tasks;
 using Application.Activities;
 using Domain;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [AllowAnonymous]
+    // [Route("api/[controller]")]
+    // [ApiController]
     // public class ActivitiesController : ControllerBase
     public class ActivitiesController : BaseApiController
     {
