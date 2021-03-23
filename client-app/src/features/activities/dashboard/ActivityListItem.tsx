@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon, Item, Label, Segment } from "semantic-ui-react";
 import { Activity } from "../../../app/models/activity";
-import ActivitityListItemAttendee from "./ActivityListItemAttendee";
+import ActivityListItemAttendee from "./ActivityListItemAttendee";
 
 interface Props {
   activity: Activity;
@@ -34,7 +34,7 @@ export default function ActivityListItem({ activity }: Props) {
                 {activity.title}
               </Item.Header>
               <Item.Description>
-              Hosted by{" "}
+                Hosted by{" "}
                 <Link to={`/profiles/${activity.hostUsername}`}>
                   {activity.host?.displayName}
                 </Link>
@@ -65,7 +65,7 @@ export default function ActivityListItem({ activity }: Props) {
         </span>
       </Segment>
       <Segment secondary>
-        <ActivitityListItemAttendee attendees={activity.attendees!} />
+        <ActivityListItemAttendee attendees={activity.attendees!} />
       </Segment>
       <Segment clearing>
         <span>{activity.description}</span>
