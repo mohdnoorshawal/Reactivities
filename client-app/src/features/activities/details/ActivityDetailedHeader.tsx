@@ -97,7 +97,7 @@ export default observer(function ActivityDetailedHeader({ activity }: Props) {
           </Button>
         ) : (
           <Button
-            disbled={activity.isCancelled}
+            disabled={activity.isCancelled}
             loading={loading}
             onClick={updateAttendance}
             color="teal"
